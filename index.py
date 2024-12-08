@@ -26,6 +26,6 @@ async def on_ready():
 bot.load_extension("cogs.hello")
 bot.load_extension("cogs.math")
 bot.load_extension("cogs.embeds")
-
+bot.load_extension("cogs.raid")
 
 bot.run(TOKEN)
