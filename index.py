@@ -17,6 +17,7 @@ except FileNotFoundError:
     print("config was not found")
 
 intents = discord.Intents.default()
+intents.message_content = True
 bot = discord.Bot(intents=intents)
 
 @bot.event
@@ -27,5 +28,6 @@ bot.load_extension("cogs.hello")
 bot.load_extension("cogs.math")
 bot.load_extension("cogs.embeds")
 bot.load_extension("cogs.raid")
+bot.load_extension("cogs.purge")
 
 bot.run(TOKEN)
