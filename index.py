@@ -23,13 +23,14 @@ bot = discord.Bot(intents=intents)
 @bot.event
 async def on_ready():
     print(f"Loged in as {bot.user}")
+    
 
-    for filename in os.listdir("cogs"):
-        if filename.endswith('.py'):
-            try:
-                bot.load_extension(f'cogs.{filename[:-3]}')
-                print(f"Successfully loaded {filename}")
-            except Exception as e:
-                print(f"Failed to load {filename}: {e}")
+for filename in os.listdir("cogs"):
+    if filename.endswith('.py'):
+        try:
+            bot.load_extension(f'cogs.{filename[:-3]}')
+            print(f"Successfully loaded {filename}")
+        except Exception as e:
+            print(f"Failed to load {filename}: {e}")
 
 bot.run(TOKEN)
